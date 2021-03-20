@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Test，GitHub</title>
-  </head>
-  <body>
-    <h1>哈哈哈哈</h1>
-  </body>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    NO: <input type="text" id="numberInput"><br><br>
+    <input type="button" value="查詢" onclick="Search()">
+    <script type="text/javascript">
+        function Search(){
+            $.get("https://script.google.com/macros/s/AKfycbwXAcaEI_3QTWP3B88jtwSRANbOgZu3nASB5OERZIqyb0Q3eHhPJayUFEAw94bD7j0Zyw/exec", {
+                        "number": document.getElementById("numberInput").value
+                    },
+                    function (data) {
+                        document.write("--------------------------<br>");
+                        document.write("No.,Name,Score <br>"+data+"<br>");
+                        document.write("--------------------------<br>");
+                    });
+        }
+    </script>
+</body>
 </html>
